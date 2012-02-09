@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang=en>
+	<head>
+		<meta charset=UTF-8>
+		
+		<link href="css/preferences.css" rel="stylesheet" type="text/css">
+		<link href="jquery/jquery.colorpicker.css" rel="stylesheet" type="text/css">
+		<link href="jquery/jquery.contextMenu.css" rel="stylesheet" type="text/css">
+		<link href="jquery/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css">
+		
+		<script type="text/javascript" src="javascript/json2.js"></script>
+		<script type="text/javascript" src="javascript/common.js"></script>
+		<script type="text/javascript" src="javascript/preferences.js"></script>
+		<script type="text/javascript" src="jquery/jquery-1.6.2.min.js"></script>
+		<script type="text/javascript" src="jquery/jquery.colorpicker.js"></script>
+		<script type="text/javascript" src="jquery/jquery.contextMenu.js"></script>
+		<script type="text/javascript" src="jquery/jquery-ui-1.8.16.custom.min.js"></script>
+		
+		<title>Fancy Bookmarks - Preferences</title>
+
+		<script type="text/javascript">
+		</script>
+		
+	</head>
+
+	<body id="body" onload="main();">
+		<br />
+		<br />
+		<div id="container">
+			<div id="logo"><img src="images/logo.png" width="640" height="180"></div>
+			<div id="preferencesContainer">
+                <div><b>Settings:</b></div>
+                <div class="settingsLine"></div>
+			
+				<div class="preferencesLeft">Rows:</div><div class="preferencesRight"><input id="inputRows" class="textfield" style="width:40px;" readonly="readonly"></input><div id="inputRowsSlider" class="slider"></div></div>
+				<div class="preferencesLeft">Columns:</div><div class="preferencesRight"><input id="inputColumns" class="textfield" style="width:40px;" readonly="readonly"></input><div id="inputColumnsSlider" class="slider"></div></div>
+				<div class="preferencesLeft">Open Tabs:</div><div class="preferencesRight">
+					<select id="inputBoxTarget" class="textfield">
+						<option value="newtab">New Tab</option>
+						<option value="backgroundtab">Background Tab</option>
+						<option value="self">Self</option>
+					</select>
+				</div>			
+				<div class="preferencesLeft">Background Color:</div><div class="preferencesRight"><input id="inputBackgroundColor" class="textfield"></input></div>
+				<div class="preferencesLeft">Box Background Color:</div><div class="preferencesRight"><input id="inputBoxBackgroundColor" class="textfield"></input></div>
+				<div class="preferencesLeft">Box Border Color:</div><div class="preferencesRight"><input id="inputBoxBorderColor" class="textfield"></input></div>
+				<div class="preferencesLeft">Textbox Background Color:</div><div class="preferencesRight"><input id="inputTextboxBackgroundColor" class="textfield"></input></div>
+				<div class="preferencesLeft">Font Color:</div><div class="preferencesRight"><input id="inputTextboxFontColor" class="textfield"></input></div>
+				<div style="float:none; clear:both;"></div>
+
+				<div class="preferencesButtonContainer">
+					<div id="buttonSave" class="preferencesButton" onclick="saveOptions();">Save</div>
+				</div>
+				<div style="float:none; clear:both;"></div>
+
+
+                <div style="margin-top:30px;"><b>Data Import</b></div>
+                <div class="settingsLine"></div>
+                <div style="margin-bottom:10px;">Choosing a .txt file, containing exported Data, starts the Import Process.</div>
+                <div><input id="inputImport" name="files[]" type="file" accept="text/*" onchange="importData(this.files);"></input></div>
+
+                <div style="float:none; clear:both;"></div>
+				
+                <div style="margin-top:30px;"><b>Data Export</b></div>
+                <div class="settingsLine"></div>
+                <div style="margin-bottom:10px;">Copy the exported Data into a .txt file for easy importing.</div>
+                <div><textarea id="inputExport" class="textarea" style="width:470px; height:150px;"></textarea></div>
+				<div class="preferencesButtonContainer">
+					<div id="buttonExport" class="preferencesButton" onclick="exportData();">Export</div>
+				</div>
+
+
+			</div>
+			<div style="height:30px; float:none; clear:both;"></div>
+			<div id="copyright">
+
+				Copyright &copy; 2011 by <a href="http://www.codeworkx.de" target="_blank">Daniel & Marco Hillenbrand</a><br />
+				This Extension uses the <a href="http://font.ubuntu.com/" target="_blank">Ubuntu Font Family</a> and <a href="http://jquery.com/" target="_blank">jQuery</a><br />
+				<br />
+			</div>
+		</div>
+	</body>
+</html>

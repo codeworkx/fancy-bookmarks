@@ -1,0 +1,102 @@
+html, body {
+	height:100%;
+	width:100%;
+	margin:0px;
+	padding:0px;
+	font-family: Ubuntu, sans-serif;
+	font-size:11px;
+}
+
+#container {
+	margin:auto;
+	width:700px;
+	text-align:center;
+	background-color:#CCCCCC;
+	border:1px solid #333333;
+}
+
+#logo {
+	float:none;
+	width:618px;
+	height:200px;
+	padding:30px;
+	margin:auto;
+}
+
+#preferencesContainer {
+	float:none;
+	width:470px;
+	text-align:left;
+	margin:auto;
+}
+
+.preferencesLeft {
+	float:left;
+	height:22px;
+	line-height:22px;
+	width:160px;
+	padding-left:10px;
+	color:#000000;
+	font-size:12px;
+}
+
+.preferencesRight {
+	float:right;
+	height:22px;
+	line-height:22px;
+	width:300px;
+	font-size:12px;
+}
+
+.textfield {
+	width:300px;
+	border:1px solid #333333;
+}
+
+.textarea {
+	width:470px;
+	border:1px solid #333333;
+}
+
+.preferencesButtonContainer {
+	float:none;
+	margin-top:10px;
+	margin-bottom:30px;
+	width:100%;
+	text-align:center;
+	bottom:0px;
+	clear:both;
+}
+
+.preferencesButton {
+	float:right;
+	background-color:#333333;
+	color:#FFFFFF;
+	margin:3px;
+	width:100px;
+	height:26px;
+	line-height:26px;
+	cursor:pointer;
+	font-size:12px;
+}
+
+.copyright {
+	margin:auto;
+	width:200px;
+	text-align:center;
+	font-size:10px;
+}
+
+.slider {
+    float:right;
+    width:240px;
+    margin-top:5px;
+    line-height:22px;
+}
+
+.settingsLine {
+    height:1px; 
+    width:100%; 
+    background-color:#333333; 
+    margin-bottom:15px;
+}

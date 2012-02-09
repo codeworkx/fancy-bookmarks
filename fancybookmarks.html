@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html lang=en>
+	<head>
+		<meta charset=UTF-8>
+		
+		<link href="css/fancybookmarks.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+		<link href="jquery/jquery.contextMenu.css" rel="stylesheet" type="text/css">
+        <link href="jquery/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css">
+		
+		<script type="text/javascript" src="jquery/jquery-1.6.2.min.js"></script>
+		<script type="text/javascript" src="jquery/jquery.contextMenu.js"></script>
+		<script type="text/javascript" src="jquery/jquery.ba-dotimeout.min.js"></script>
+        <script type="text/javascript" src="jquery/jquery-ui-1.8.16.custom.min.js"></script>
+		<script type="text/javascript" src="javascript/json2.js"></script>
+		<script type="text/javascript" src="javascript/common.js"></script>
+		<script type="text/javascript" src="javascript/fancybookmarks.js"></script>
+		
+		<title>Fancy Bookmarks</title>
+		
+	</head>
+
+	<body id="body" onload="main(); setPercentageWindowSize ('', 'container', 100, ''); setPercentageWindowSize ('', 'overlayContainer', 100, '');" onresize="resizeGrid(); setPercentageWindowSize ('', 'container', 100, ''); setPercentageWindowSize ('', 'overlayContainer', 100, '');">
+		<div id="status"></div>
+		<ul id="linkedBoxMenu" class="contextMenu">
+		    <li class="contextMenuItem"><a href="#refresh">Refresh</a></li>
+			<li class="contextMenuItem"><a href="#edit">Edit</a></li>
+			<li class="contextMenuItem"><a href="#delete">Delete</a></li>
+			<li class="contextMenuItem"><a href="#preferences">Preferences</a></li>
+		</ul>
+		<ul id="emptyBoxMenu" class="contextMenu">
+			<li class="contextMenuItem"><a href="#add">Add</a></li>
+			<li class="contextMenuItem"><a href="#preferences">Preferences</a></li>
+		</ul>
+		
+		<div id="overlay"></div>
+		<div id="overlayContainer">
+			<div id="settingsContainer">
+				<div id="settingsAdd">
+				<div id="settingsHeadline" class="settingsHeadline"></div>
+				<br />
+				<br />
+				<div class="settingsLeft">Title:</div><div class="settingsRight"><input id="addBoxTitle" class="textfield"></input></div>
+				<div class="settingsLeft">Hyperlink:</div><div class="settingsRight"><input id="addBoxHyperlink" class="textfield" value="http://www." onkeyup="hyperlinkSuggestions(this.value);" onblur="hideSuggestions()"></input></div>
+				<div class="settingsLeft"></div><div id="hyperlinkSuggestions" class="settingsRight"></div>
+				<br />
+				<br />
+				<div class="settingsButtonContainer"><div id="buttonSaveBoxSettings" class="settingsButton">Save</div><div onclick="closeSettingsMenu();" class="settingsButton">Cancel</div></div>
+				</div>
+				<div id="settingsEdit">Edit</div>
+			</div>
+		</div>
+		<div id="container"></div>
+	</body>
+</html>
