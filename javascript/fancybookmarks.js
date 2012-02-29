@@ -396,7 +396,8 @@ function saveBoxSettings(boxId) {
 	var title = elementAddBoxTitle.value;
 	var hyperlink = elementAddBoxHyperlink.value;
 	
-    if(hyperlink.substr(0,7) != 'http://' && hyperlink.substr(0,8) != 'https://') {
+	// Added validation to allow Chrome Extensions Bookmarking
+    if(hyperlink.substr(0,7) != 'http://' && hyperlink.substr(0,8) != 'https://' && hyperlink.substr(0,19) != 'chrome-extension://') {
        hyperlink = 'http://' + hyperlink;
     }
    
