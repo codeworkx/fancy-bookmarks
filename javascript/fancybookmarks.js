@@ -635,10 +635,10 @@ function takeScreenshot(url, index, callback) {
 
 	//If its a Chrome Packaged App use the Apps Icon instead of a screenshot
 	if(url.substr(0,19) == 'chrome-extension://') {
-	var appID= url.slice(19);;
-	appID = appID.split("/");
-	var dataUrl = 'chrome://extension-icon/'+ appID[0] + '/128/0';
-	storeScreenshot(index, dataUrl, callback);
+		var appID= url.slice(19);;
+		appID = appID.split("/");
+		var dataUrl = 'chrome://extension-icon/'+ appID[0] + '/128/0';
+		storeScreenshot(index, dataUrl, callback);
 	} else {
 		// create a new window for capturing the screen
 		chrome.windows.create(
