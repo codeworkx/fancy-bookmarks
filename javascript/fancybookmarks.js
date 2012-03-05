@@ -218,7 +218,8 @@ function drawGrid(rows, columns) {
 				boxImage.attr('id', 'boxImage' + l);
 				(function(img, index, url) {
 					function setSrc(src) { img.attr('src', src); }
-					getFileAsText(boxData.image, setSrc, function() { takeScreenshot(url, index, setSrc); });
+					getFileAsText(boxData.image, setSrc, function() { 
+						(url, index, setSrc); });
 				})(boxImage, l, boxData.hyperlink);
 				boxImage.css('width', '100%');
 				boxImage.css('height', '100%');
@@ -396,7 +397,8 @@ function saveBoxSettings(boxId) {
 	var title = elementAddBoxTitle.value;
 	var hyperlink = elementAddBoxHyperlink.value;
 	
-    if(hyperlink.substr(0,7) != 'http://' && hyperlink.substr(0,8) != 'https://') {
+	// Added validation to allow Chrome Apps Bookmarking
+    if(hyperlink.substr(0,7) != 'http://' && hyperlink.substr(0,8) != 'https://' && hyperlink.substr(0,19) != 'chrome-extension://') {
        hyperlink = 'http://' + hyperlink;
     }
    
@@ -631,7 +633,13 @@ function storeScreenshot(index, dataUrl, callback) {
 
 function takeScreenshot(url, index, callback) {
 
-	if(url) {
+	//If its a Chrome Packaged App use the Apps Icon instead of a screenshot
+	if(url.substr(0,19) == 'chrome-extension://') {
+		var appID= url.slice(19);;
+		appID = appID.split("/");
+		var dataUrl = 'chrome://extension-icon/'+ appID[0] + '/128/0';
+		storeScreenshot(index, dataUrl, callback);
+	} else {
 		// create a new window for capturing the screen
 		chrome.windows.create(
 			{url: url, top: screen.height, left: screen.width, height: 768, width: 1024, focused: false, type: "popup"}, 
